@@ -7,38 +7,13 @@ const app = new Koa();
 //body解析
 var bodyParser = require('koa-bodyparser');
 
-const router = new Router();
+const router = require('./routes/index');
 
-
-app.use(bodyParser());
-
-router.get('/', async (ctx, next) => {
-  ctx.response.body = `<h1>Index</h1>
-      <form action="/publishPost" method="post">
-          <p>id: <input name="name" value="koa"></p>
-          <p>title: <input name="text" type="text"></p>
-          <p><input type="submit" value="Submit"></p>
-      </form>`;
-});
-
-router.get('/postList/:id', async (ctx, next)=>{
-  await next();
-  ctx.body = {
-    'id':'webkong',
-    'title':'这是一个测试的东西'
-  }
-});
-
-router.post('/publishPost', async (ctx, next)=>{
-  await next();
-
-  let body = ctx.request.body
-  console.log(body);
-});
 
 
 app.use(router.routes());
+app.use(router.allowedMethods());
 
 app.listen(3000, function() {
   console.log('App listening on port 3000!');
-});  console.log(ctx.req);
+});  
