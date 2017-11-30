@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../lib/libDB');
 const {id} = require('./Id');
 
-const ModulePoster = sequelize.define('poster', {
+const ModulePost = sequelize.define('post', {
   id,
   title: {
     type: Sequelize.STRING,
@@ -29,12 +29,12 @@ const ModulePoster = sequelize.define('poster', {
     comment: '喜欢'
   }
 }, {
-  tableName: 'poster',
+  tableName: 'posts',
   timestamps: false
 });
-ModulePoster.sync({
+ModulePost.sync({
   force: true
 });
 
 
-module.exports = ModulePoster;
+module.exports = ModulePost;

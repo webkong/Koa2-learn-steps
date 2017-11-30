@@ -1,10 +1,10 @@
-// poster controllers
+// user controllers
 const ModuleUser = require('../module/User');
 
 let login = async (ctx) => {
   let data = '';
-  await ModuleUser.findById(1).then(poster => {
-    data = poster;
+  await ModuleUser.findById(1).then(user => {
+    data = user;
   });
   ctx.body = data;
 }

@@ -7,6 +7,7 @@ const ModuleUser= sequelize.define('user', {
   password: { type: Sequelize.STRING(32), allowNull: true, comment: '密码' },
   email: { type: Sequelize.STRING(128), allowNull: false, unique: true, comment: '邮箱' }
 }, {
+  tableName: 'users',
   paranoid: true,
   comment: '用户'
 })

@@ -1,5 +1,5 @@
 // poster controllers
-const ModulePoster = require('../module/Poster');
+const ModulePoster = require('../module/Post');
 
 let get = async (ctx) => {
   let data = '';
