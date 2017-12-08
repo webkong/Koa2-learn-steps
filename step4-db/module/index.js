@@ -10,7 +10,7 @@ User.PublishComment = User.hasMany(Comments, {foreignKey: 'commentId', constrain
 Post.Creator = Post.belongsTo(User, { foreignKey: 'creatorId', as: 'creator' })
 Post.Comments = Post.hasMany(Comments, { foreignKey: 'commentId', as: 'comment' })
 
-Comments.Creator = Comments.belongsToMany(User, { through: 'comments_creators', as: 'creator' })
+Comments.Creator = Comments.belongsTo(User, { foreignKey: 'creatorId', as: 'creator' })
 
 Post.sync({
   force: true
