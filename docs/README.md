@@ -14,5 +14,5 @@ learning koa2 step by step.
 
 * [db & sequelize](./step4.md)
 
-
+一些更高级的应用还会更新
 
